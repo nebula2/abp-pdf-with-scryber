@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+      <TargetFramework>net6.0</TargetFramework>
+      <RootNamespace>BookStorePdf</RootNamespace>
+      
+	  <!-- add this line -->
+	  <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BookStorePdf.Domain\BookStorePdf.Domain.csproj" />
+    <ProjectReference Include="..\BookStorePdf.Application.Contracts\BookStorePdf.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <!-- add this line -->
+	  <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.3" />
+      
+	  <PackageReference Include="Scryber.Core" Version="5.0.7" />
+      <PackageReference Include="Volo.Abp.Account.Application" Version="5.2.0" />
+      <PackageReference Include="Volo.Abp.Identity.Application" Version="5.2.0" />
+      <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="5.2.0" />
+      <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="5.2.0" />
+      <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="5.2.0" />
+      <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="5.2.0" />
+  </ItemGroup>
+
+	<!-- add this -->
+  <ItemGroup>
+  	<EmbeddedResource Include="MyResources\**\*.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MyResources\" />
+  </ItemGroup>
+
+	<!-- and this -->
+	<Choose>
+		<When Condition="'$(Configuration)'=='Debug'">
+			<ItemGroup>
+				<Content Include="MyResources\**\*.*">
+					<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+				</Content>
+			</ItemGroup>
+		</When>
+		<When Condition="'$(Configuration)'!='Debug'" />
+	</Choose>
+	
+</Project>
