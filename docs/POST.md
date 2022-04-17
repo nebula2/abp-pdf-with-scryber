@@ -1,7 +1,7 @@
-# Generate PDF's in an ABP Framework Project using scryber.core
+# Generate PDF's in an ABP Framework Project using Scryber.Core
 
 In this article, we'll create a basic application with blazor-server for UI to demonstrate how generating PDF's can be implemented in an ABP project.
-To archieve this, we will use [scryber.core](https://github.com/richard-scryber/scryber.core).
+To archieve this, we will use [Scryber.Core](https://github.com/richard-scryber/scryber.core).
 
 For the sake of simplicity I will reduce everything to the bare minimum just so that you get a picture of how everything works together.
 PDF's will be generated server side. This post will show how to download the generated PDF file. If you are using a different UI layer, you just need to implement your download a bit different.
@@ -36,7 +36,7 @@ We can now start up `BookStorePdf.Blazor` and ensure that everything works corre
 
 ## Add Scryber.core
 
-We are now ready to install scryber.core.
+We are now ready to install Scryber.Core.
 
 Add the `Scryber.Core` NuGet-Package to `BookStorePdf.Application`.
 
@@ -404,3 +404,10 @@ public partial class Index
 ## Result
 
 ![](images/BookStorePdf-Blazor.gif)
+
+## Further Reading
+This tutorial scratched the surface of generating a PDF.
+Let me know if you're interested in another part where I show how to pass objects which then get printed.
+
+- [Virtual File System](https://docs.abp.io/en/abp/latest/Virtual-File-System)
+- [Scryber.Core Documentation](https://scrybercore.readthedocs.io/en/latest/)
