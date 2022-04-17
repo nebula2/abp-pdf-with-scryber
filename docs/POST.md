@@ -6,6 +6,8 @@ To archieve this, we will use [Scryber.Core](https://github.com/richard-scryber/
 For the sake of simplicity I will reduce everything to the bare minimum just so that you get a picture of how everything works together.
 PDF's will be generated server side. This post will show how to download the generated PDF file. If you are using a different UI layer, you just need to implement your download a bit different.
 
+The source code for this can be found [here](https://github.com/nebula2/abp-pdf-with-scryber).
+
 ## Creating the Solution
 
 For this article, we will create a simple application with blazor-server for our UI.
